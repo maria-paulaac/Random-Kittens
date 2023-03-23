@@ -9,6 +9,7 @@ body {
 .container {
   width: 100%;
   height: 100vh;
+  padding-top: 30px;
 }
 h1 {
   text-align: center;
@@ -19,7 +20,7 @@ h1 {
   margin: 0;
   padding: 0;
 }
-.img-container {
+.random-kittens-container {
   border-radius: 20px;
   width: 60%;
   display: flex;
@@ -29,8 +30,34 @@ h1 {
   backdrop-filter: blur(1px);
   padding: 30px;
   border: solid 1px rgba(255, 255, 255, 0.3);
+  position: relative;
+  text-align: center;
 }
-.img-container img {
+.random-title {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.icon-container {
+  display: flex;
+  top: 10px;
+  right: 10px;
+  justify-content: end;
+  margin: 0;
+  position: relative;
+  flex: 1;
+}
+.star-icon {
+  position: absolute;
+  width: 30px;
+}
+.star-icon:hover {
+  cursor: pointer;
+}
+.img-container > img:nth-child(2) {
   border-radius: 20px;
   width: 300px;
   height: 300px;
@@ -65,4 +92,9 @@ button:hover span {
 }
 button:active {
   transform: scale(0.9);
+}
+#favorites-kittens {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
 }

@@ -15,23 +15,54 @@
   </head>
   <body>
     <div class="container">
-      <h1>Random Kittens</h1>
+      <h1>Cute Kittens</h1>
+      <span id="error"></span>
 
       <section id="random-kittens">
-        <figure class="img-container">
-          <img id="img1" alt="Random Kitty Pic" />
-          <img id="img2" alt="Random Kitty Pic" />
-          <img id="img3" alt="Random Kitty Pic" />
-        </figure>
+        <div class="random-kittens-container">
+          <h2 class="random-title">Random Kittens</h2>
+
+          <div class="img-container">
+            <figure class="icon-container">
+              <img class="star-icon" src="/others/star.png" alt="star" />
+            </figure>
+            <img id="img1" alt="Random Kitty Pic" />
+          </div>
+
+          <div class="img-container">
+            <figure class="icon-container">
+              <img class="star-icon" src="/others/star.png" alt="star" />
+            </figure>
+            <img id="img2" alt="Random Kitty Pic" />
+          </div>
+
+          <div class="img-container">
+            <figure class="icon-container">
+              <img class="star-icon" src="/others/star.png" alt="star" />
+            </figure>
+            <img id="img3" alt="Random Kitty Pic" />
+          </div>
+        </div>
       </section>
 
       <div class="button-box">
-        <button class="reload-page">
+        <button class="reload-kittens-images">
           <span>Other Kittens</span>
         </button>
       </div>
 
-      <section id="favorites-kittens"></section>
+      <section id="favorites-kittens">
+        <div class="random-kittens-container">
+          <h2 class="random-title">Favorites Kittens</h2>
+
+          <div class="img-container">
+            <figure class="icon-container">
+              <img class="star-icon" src="/others/star.png" alt="star" />
+            </figure>
+            <img id="img1" alt="Random Kitty Pic" />
+          </div>
+        </div>
+      </section>
     </div>
     <script src="./script.js"></script>
   </body>
