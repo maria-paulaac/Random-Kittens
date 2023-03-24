@@ -4,36 +4,45 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
   width: 100%;
-  height: 100vh;
-  padding-top: 30px;
+  /* height: 100vh; */
+  padding: 30px 0;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr auto auto auto;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto; */
 }
 h1 {
   text-align: center;
 }
-#random-kittens {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-.random-kittens-container {
+
+#random-kittens,
+#favorites-kittens {
+  flex-wrap: wrap;
+  margin: 0 auto;
   border-radius: 20px;
   width: 60%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  padding: 30px 40px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  position: relative;
+  text-align: start;
+  box-sizing: border-box;
+}
+.random-kittens-container,
+.favorites-kittens-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(1px);
-  padding: 30px;
-  border: solid 1px rgba(255, 255, 255, 0.3);
-  position: relative;
-  text-align: center;
 }
-.random-title {
+
+.random-title,
+.favorite-title {
   flex-basis: 100%;
   display: flex;
   justify-content: flex-start;
@@ -48,13 +57,16 @@ h1 {
   justify-content: end;
   margin: 0;
   position: relative;
-  flex: 1;
 }
-.star-icon {
+.star-icon,
+.remove-star-icon {
   position: absolute;
   width: 30px;
 }
 .star-icon:hover {
+  cursor: pointer;
+}
+.remove-star-icon:hover {
   cursor: pointer;
 }
 .img-container > img:nth-child(2) {
@@ -64,7 +76,7 @@ h1 {
   object-fit: cover;
 }
 .button-box {
-  margin-top: 32px;
+  margin: 40px 0 90px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,4 +109,8 @@ button:active {
   display: flex;
   justify-content: center;
   margin-top: 80px;
+}
+.favorites-kittens-container {
+  height: auto;
+  overflow: auto;
 }
