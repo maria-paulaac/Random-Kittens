@@ -62,7 +62,7 @@ async function loadRandomKittens() {
     data.forEach((item) => {
       const kittyElement = createKittyCard({
         kitty: item,
-        iconUrl: "/others/star.png",
+        iconUrl: "https://maria-paulaac.github.io/others/star.png",
         classIconStar: "star-icon",
         altIcon: "icon-star",
         altImgKitty: "Random Kitty",
@@ -94,7 +94,7 @@ async function loadFavoritesKittens() {
     data.forEach((favoriteKitty) => {
       const kittyElement = createKittyCard({
         kitty: favoriteKitty.image,
-        iconUrl: "/others/star-remove.png",
+        iconUrl: "https://maria-paulaac.github.io/others/star-remove.png",
         classIconStar: "remove-star-icon",
         altIcon: "icon-remove-star",
         altImgKitty: "Favorite Kitty Pic",
