@@ -1,7 +1,5 @@
-const API_URL_RANDOM =
-  "https://api.thecatapi.com/v1/images/search?limit=3&api_key=live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg";
-const API_URL_FAVORITES =
-  "https://api.thecatapi.com/v1/favourites?api_key=live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg";
+const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=3&";
+const API_URL_FAVORITES = "https://api.thecatapi.com/v1/favourites?";
 
 const apiUrlFavoriteDelete = (id) =>
   `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg`;
@@ -49,7 +47,13 @@ function createKittyCard({
 const kittyContainer = document.getElementById("random-kittens-container");
 
 async function loadRandomKittens() {
-  const response = await fetch(API_URL_RANDOM);
+  const response = await fetch(API_URL_RANDOM, {
+    method: "GET",
+    headers: {
+      "X-API-KEY":
+        "live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg",
+    },
+  });
   const data = await response.json();
 
   console.log("Random");
@@ -80,7 +84,14 @@ async function loadFavoritesKittens() {
     "favorites-kittens-container"
   );
 
-  const response = await fetch(API_URL_FAVORITES);
+  const response = await fetch(API_URL_FAVORITES, {
+    method: "GET",
+    headers: {
+      "X-API-KEY":
+        "live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg",
+    },
+  });
+
   const data = await response.json();
 
   console.log("Favorites");
@@ -111,6 +122,8 @@ async function saveFavoriteKitty(id) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "X-API-KEY":
+        "live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg",
     },
     body: JSON.stringify({
       image_id: id,
