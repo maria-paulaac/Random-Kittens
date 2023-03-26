@@ -16,6 +16,7 @@ function createKittyCard({
   kitty,
   iconUrl,
   classIconStar,
+  altIcon,
   altImgKitty,
   onClick,
 }) {
@@ -28,7 +29,7 @@ function createKittyCard({
   figureIcon.setAttribute("class", "icon-container");
   imgIcon.setAttribute("class", classIconStar);
   imgIcon.setAttribute("src", iconUrl);
-  imgIcon.setAttribute("alt", "icon-star");
+  imgIcon.setAttribute("alt", altIcon);
   imgKitty.setAttribute("id", kitty.id);
   imgKitty.setAttribute("alt", altImgKitty);
   imgKitty.setAttribute("src", kitty.url);
@@ -63,6 +64,7 @@ async function loadRandomKittens() {
         kitty: item,
         iconUrl: "/others/star.png",
         classIconStar: "star-icon",
+        altIcon: "icon-star",
         altImgKitty: "Random Kitty",
         onClick: () => saveFavoriteKitty(item.id),
       });
@@ -94,6 +96,7 @@ async function loadFavoritesKittens() {
         kitty: favoriteKitty.image,
         iconUrl: "/others/star-remove.png",
         classIconStar: "remove-star-icon",
+        altIcon: "icon-remove-star",
         altImgKitty: "Favorite Kitty Pic",
         onClick: () => deleteFavoriteKitty(favoriteKitty.id),
       });
