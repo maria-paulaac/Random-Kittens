@@ -18,10 +18,6 @@ uploadIcon.addEventListener("click", function () {
   input.addEventListener("change", uploadKittyImage);
 });
 
-// btnUpload.addEventListener("click", () => {
-//   saveFavoriteKitty(data.id);
-// });
-
 function createKittyCard({
   kitty,
   iconUrl,

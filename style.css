@@ -37,14 +37,6 @@ h1 {
   justify-content: space-between;
 }
 
-/* .random-kittens-container,
-.favorites-kittens-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  grid-auto-flow: row dense;
-} */
-
 .random-title,
 .favorite-title {
   flex-basis: 100%;
@@ -155,9 +147,7 @@ label img {
   display: block;
   width: 100px;
 }
-/* .upload-icon img {
-  width: 50px;
-} */
+
 .upload-icon:hover {
   cursor: pointer;
 }
