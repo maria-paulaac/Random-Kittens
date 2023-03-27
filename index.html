@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CuteKitten API app</title>
+    <title>🐱 CuteKitten API App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,22 +18,62 @@
       <h1>CuteKitten API</h1>
       <span id="error"></span>
 
-      <section id="random-kittens">
-        <h2 class="random-title">Random Kitten</h2>
+      <section class="random-kittens" id="random-kittens">
+        <h2 class="random-title">Random Kitten 🌈</h2>
 
         <div id="random-kittens-container" class="random-kittens-container">
         </div>
+
+        <div class="button-box">
+          <button class="reload-kittens-images">
+            <span>Other Pics</span>
+          </button>
+        </div>
       </section>
 
-      <div class="button-box">
-        <button class="reload-kittens-images">
-          <span>Other Pics</span>
-        </button>
-      </div>
+      <section class="uploading-kitty" id="uploading-kitty">
+        <h2 class="uploading-title">Upload your own kitty pic 🐱💜</h2>
 
-      <section id="favorites-kittens">
+        <form id="uploading-form">
+
+          <label for="file">
+            <img class="upload-icon" id="upload-icon" src="./others/upload.png" alt="">
+          </label>
+          <input class="file" id="file" type="file" name="file" aria-label="Selec file">
+
+          <h3>Do you want to add your kitty pic to your Favorite Kitten section?</h3>
+
+          <div class="button-box">
+            <button class="add-favorite-kitty-image" type="button">
+              <span>Add to Favorites</span>
+            </button>
+          </div>
+        </form>
+
+      </section>
+
+      <!-- <section class="uploading-kitty" id="uploading-kitty">
+        <h2 class="uploading-title">Upload your own kitty pic</h2>
+
+        <figure class="upload-icon">
+          <img src="./others/upload.png" alt="">
+        </figure>
+
+        <form id="uploading-form">
+          <input id="file" type="file" name="file" aria-label="Selec file">
+
+          <div class="button-box">
+            <button class="upload-kitty-image" type="button">
+              <span>Upload</span>
+            </button>
+          </div>
+        </form>
+
+      </section> -->
+
+      <section class="favorites-kittens" id="favorites-kittens">
         <h2 class="favorite-title" id="title-favorites-kittens">
-          Favorite Kitten
+          Favorite Kitten ✨
         </h2>
 
         <div
@@ -43,6 +83,21 @@
           </div> 
         </div>
       </section>
+
+      <!-- <section class="uploading-kitty" id="uploading-kitty">
+        <h2 class="uploading-title">Upload the photo of your kitty</h2>
+        
+        <form id="uploading-form">
+          <input id="file" type="file" name="file" aria-label="Selec file">
+          <div class="button-box">
+            <button class="upload-kitty-image" type="button">
+              <span>Upload</span>
+            </button>
+          </div>
+        </form>
+
+      </section> -->
+
     </div>
     <script src="./script.js"></script>
   </body>

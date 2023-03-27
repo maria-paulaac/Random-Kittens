@@ -15,8 +15,9 @@ h1 {
   text-align: center;
 }
 
-#random-kittens,
-#favorites-kittens {
+.random-kittens,
+.favorites-kittens,
+.uploading-kitty {
   flex-wrap: wrap;
   margin: 0 auto;
   border-radius: 20px;
@@ -33,8 +34,16 @@ h1 {
 .favorites-kittens-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
+  justify-content: space-between;
 }
+
+/* .random-kittens-container,
+.favorites-kittens-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-flow: row dense;
+} */
 
 .random-title,
 .favorite-title {
@@ -70,8 +79,13 @@ h1 {
   height: 300px;
   object-fit: cover;
 }
+
+.image-container .image:last-child:nth-child(3n-1) {
+  grid-column: 2 / 4;
+}
+
 .button-box {
-  margin: 40px 0 90px 0;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,10 +114,47 @@ button:hover span {
 button:active {
   transform: scale(0.9);
 }
-#favorites-kittens {
+.favorites-kittens {
   margin-top: 80px;
 }
 .favorites-kittens-container {
   height: auto;
   overflow: auto;
+}
+
+.uploading-kitty {
+  margin-top: 80px;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  padding: 30px 40px;
+  border: 4px dashed rgba(255, 255, 255, 0.3);
+  position: relative;
+  text-align: start;
+  box-sizing: border-box;
+}
+
+.uploading-kitty:hover {
+  background-color: rgba(255, 255, 255, 0.38);
+}
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+label img {
+  display: block;
+  width: 100px;
+}
+/* .upload-icon img {
+  width: 50px;
+} */
+.upload-icon:hover {
+  cursor: pointer;
+}
+.file {
+  display: none;
 }

@@ -1,14 +1,26 @@
 const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=3&";
 const API_URL_FAVORITES = "https://api.thecatapi.com/v1/favourites?";
+const API_URL_UPLOAD = "https://api.thecatapi.com/v1/images/upload";
 
 const apiUrlFavoriteDelete = (id) =>
   `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg`;
 
 const btn = document.querySelector(".reload-kittens-images");
+const btnUpload = document.querySelector(".add-favorite-kitty-image");
 const spanError = document.getElementById("error");
 const starIcon = document.querySelectorAll(".star-icon");
+const uploadIcon = document.getElementById("upload-icon");
 
 btn.addEventListener("click", loadRandomKittens);
+
+uploadIcon.addEventListener("click", function () {
+  const input = document.getElementById("file");
+  input.addEventListener("change", uploadKittyImage);
+});
+
+// btnUpload.addEventListener("click", () => {
+//   saveFavoriteKitty(data.id);
+// });
 
 function createKittyCard({
   kitty,
@@ -156,6 +168,36 @@ async function deleteFavoriteKitty(id) {
     console.log("Kitty removed from favorites");
   }
   loadFavoritesKittens();
+}
+
+async function uploadKittyImage() {
+  const form = document.getElementById("uploading-form");
+  const formData = new FormData(form);
+
+  console.log(formData.get("file"));
+
+  const response = await fetch(API_URL_UPLOAD, {
+    method: "POST",
+    headers: {
+      // "content-type": "multipart/form-data",
+      "X-API-KEY":
+        "live_iZ6Eefeyg5DLUA6jbq3Hpur4QJE4fF3mIT6zQ6Q0glEARel7jl6LqfMmbcCdpVsg",
+    },
+    body: formData,
+  });
+  const data = await response.json();
+
+  if (response.status !== 201) {
+    spanError.innerText = `Error ${response.status}. Try later.`;
+  } else {
+    console.log("Cat photo uploaded successfully");
+    console.log(data);
+    console.log(data.url);
+
+    btnUpload.addEventListener("click", () => {
+      saveFavoriteKitty(data.id);
+    });
+  }
 }
 
 loadRandomKittens();
