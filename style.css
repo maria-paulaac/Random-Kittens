@@ -140,10 +140,16 @@ button:active {
   background-color: rgba(255, 255, 255, 0.38);
 }
 label {
+  background-color: rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  border: 4px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
+label:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 label img {
   display: block;
